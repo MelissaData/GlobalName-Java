@@ -4,3 +4,4 @@ java -classpath ".\melissadata\globalname\org.apache.sling.commons.json-2.0.20.j
 del .\melissadata\globalname\*.class 
 del .\melissadata\globalname\view\*.class 
 del .\melissadata\globalname\model\*.class
+pause

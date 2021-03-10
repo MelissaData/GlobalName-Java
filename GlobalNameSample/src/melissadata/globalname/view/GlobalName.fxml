@@ -28,14 +28,19 @@
                                     </font></Label>
                                 <Label layoutX="25.0" layoutY="63.0" prefHeight="17.0" prefWidth="151.0" text="Correct First Name:" />
                                 <Label layoutX="26.0" layoutY="105.0" text="Name Hint:" />
-                                <Label layoutX="26.0" layoutY="152.0" text="Gender Population:" />
+                                <Label layoutX="192.0" layoutY="63.0" text="Gender Population:" />
+								<Label layoutX="192.0" layoutY="105.0" text="Gender Aggression:" />
                                 <ComboBox fx:id="optionCorrectFirstNameBox" layoutX="26.0" layoutY="80.0" onAction="#setOptionCorrectFirstNameBox" prefWidth="150.0" />
                                 <ComboBox fx:id="optionNameHintBox" layoutX="26.0" layoutY="122.0" onAction="#setOptionNameHintBox" prefWidth="150.0" />
-                                <ComboBox fx:id="optionGenderPopulationBox" layoutX="26.0" layoutY="169.0" onAction="#setOptionGenderPopulationBox" prefWidth="150.0" />
-                                <Label layoutX="192.0" layoutY="105.0" text="Middle Name Logic:" />
-                                <ComboBox fx:id="optionMiddleNameLogicBox" layoutX="192.0" layoutY="122.0" onAction="#setOptionMiddleNameLogicBox" prefWidth="150.0" />
-                                <Label layoutX="192.0" layoutY="63.0" text="Gender Aggression:" />
+                                <ComboBox fx:id="optionGenderPopulationBox" layoutX="192.0" layoutY="122.0" onAction="#setOptionGenderPopulationBox" prefWidth="150.0" />
                                 <ComboBox fx:id="optionGenderAggressionBox" layoutX="192.0" layoutY="80.0" onAction="#setOptionGenderAggressionBox" prefWidth="150.0" />
+								
+								<Label layoutX="358.0" layoutY="63.0" text="Salutation Order:" />
+                                <ComboBox fx:id="optionSalutationBox1" layoutX="358.0" layoutY="80.0" onAction="#setOptionSalutationBox1" prefWidth="150.0" />
+								<ComboBox fx:id="optionSalutationBox2" layoutX="358.0" layoutY="122.0" onAction="#setOptionSalutationBox2" prefWidth="150.0" />
+								<ComboBox fx:id="optionSalutationBox3" layoutX="358.0" layoutY="164.0" onAction="#setOptionSalutationBox3" prefWidth="150.0" />
+								<ComboBox fx:id="optionSalutationBox4" layoutX="358.0" layoutY="206.0" onAction="#setOptionSalutationBox4" prefWidth="150.0" />
+                                
                             </children>
                             <opaqueInsets>
                                 <Insets />
@@ -63,13 +68,14 @@
                         <Font size="17.0" />
                     </font>
                 </Label>
-                <Label layoutX="40.0" layoutY="87.0" text="Company Information" underline="true">
+                <Label layoutX="20.0" layoutY="87.0" text="Global Name Information" underline="true">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
                 <TextField fx:id="inputCompanyText" layoutX="10.0" layoutY="107.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter Company..." />
                 <TextField fx:id="inputFullNameText" layoutX="10.0" layoutY="132.0" prefWidth="180.0" promptText="Enter Full Name..." />
+				<TextField fx:id="inputCountryText" layoutX="10.0" layoutY="157.0" prefWidth="180.0" promptText="Enter Country..." />
                 <ButtonBar layoutY="446.0" prefHeight="40.0" prefWidth="110.0">
                     <buttons>
                         <Button fx:id="buttonClear" mnemonicParsing="false" text="Clear" />

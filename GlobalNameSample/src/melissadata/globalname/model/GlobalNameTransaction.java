@@ -16,14 +16,15 @@ public class GlobalNameTransaction {
     private final String endpoint;
     private GlobalNameOptions options;
     private String identNumber;
-    private String company, fullname, format;
+    private String company, fullname, format, country;
 
     public GlobalNameTransaction() {
-        endpoint    = "https://globalname.melissadata.net/V3/WEB/GlobalName/doGlobalName?";
+        endpoint    = "https://globalname-beta.melissadata.net/V3/WEB/GlobalName/doGlobalName?t=";
         options     = new GlobalNameOptions();
         identNumber = "";
         company     = "";
         fullname    = "";
+		country		= "";
         format      = "";
     }
     public String processTransaction(String request) {
@@ -84,6 +85,9 @@ public class GlobalNameTransaction {
         request += "&id=" + getIdentNumber();
         request += "&opt=" + options.generateOptionString();
         try {
+			if(!getCountry().equals(""))
+                request += "&ctry=" + URLEncoder.encode(getCountry(), "UTF-8");
+			
             if(!getCompany().equals(""))
                 request += "&comp=" + URLEncoder.encode(getCompany(), "UTF-8");
 
@@ -120,6 +124,14 @@ public class GlobalNameTransaction {
 
     public void setCompany(String company) {
         this.company = company;
+    }
+	
+	public String getCountry() {
+        return country;
+    }
+	
+	public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getFullname() {

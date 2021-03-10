@@ -19,7 +19,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             this.primaryStage = primaryStage;
-            this.primaryStage.setTitle("Business Search Java Sample Application");
+            this.primaryStage.setTitle("Global Name Web Service Sample Application");
 
             initRootLayout();
 

@@ -35,6 +35,8 @@ public class GlobalNameController  {
     private TextField inputCompanyText;
     @FXML
     private TextField inputFullNameText;
+    @FXML
+    private TextField inputCountryText;
 
     @FXML
     private ComboBox<String> optionCorrectFirstNameBox;
@@ -45,7 +47,13 @@ public class GlobalNameController  {
     @FXML
     private ComboBox<String> optionGenderAggressionBox;
     @FXML
-    private ComboBox<String> optionMiddleNameLogicBox;
+    private ComboBox<String> optionSalutationBox1;
+	@FXML
+    private ComboBox<String> optionSalutationBox2;
+	@FXML
+    private ComboBox<String> optionSalutationBox3;
+	@FXML
+    private ComboBox<String> optionSalutationBox4;
 
     @FXML
     private TextArea RequestTextArea;
@@ -99,6 +107,7 @@ public class GlobalNameController  {
         buttonClear.setOnAction((event) -> {
             inputCompanyText.clear();
             inputFullNameText.clear();
+			inputCountryText.clear();
             returnToConfiguration();
         });
     }
@@ -121,14 +130,23 @@ public class GlobalNameController  {
             updateRequestText();
             returnToConfiguration();
         });
+		
+        inputCountryText.textProperty().addListener((observable, oldvalue, newvalue) -> {
+            Transaction.setCountry(newvalue);
+            updateRequestText();
+            returnToConfiguration();
+        });
     }
     // Define what values each combo box can hold
     private void setupOptionSelections() {
         optionCorrectFirstNameBox.setItems(FXCollections.observableArrayList("", "OFF", "ON"));
-        optionNameHintBox.setItems(FXCollections.observableArrayList("", "DefinitelyFull", "VeryLikelyFull", "ProbablyFull", "DefinitelyFull", "VeryLikelyFull", "ProbablyInverse", "VeryLikelyInverse", "DefinitelyInverse", "MixedFirstName", "MixedLastName"));
+        optionNameHintBox.setItems(FXCollections.observableArrayList("", "DefinitelyFull", "Varying", "DefinitelyInverse"));
         optionGenderAggressionBox.setItems(FXCollections.observableArrayList("", "Aggressive", "Neutral", "Conservative"));
         optionGenderPopulationBox.setItems(FXCollections.observableArrayList("", "Male", "Mixed", "Female"));
-        optionMiddleNameLogicBox.setItems(FXCollections.observableArrayList("", "ParseLogic", "HyphenatedLast", "MiddleName"));
+        optionSalutationBox1.setItems(FXCollections.observableArrayList("", "Formal", "Informal", "FirstLast", "Blank"));
+		optionSalutationBox2.setItems(FXCollections.observableArrayList("", "Formal", "Informal", "FirstLast", "Blank"));
+		optionSalutationBox3.setItems(FXCollections.observableArrayList("", "Formal", "Informal", "FirstLast", "Blank"));
+		optionSalutationBox4.setItems(FXCollections.observableArrayList("", "Formal", "Informal", "FirstLast", "Blank"));
     }
 
     public void setOptionCorrectFirstNameBox() {
@@ -158,8 +176,26 @@ public class GlobalNameController  {
         returnToConfiguration();
     }
 
-    public void setOptionMiddleNameLogicBox() {
-        option.setOptionMiddleNameLogic(optionMiddleNameLogicBox.getValue());
+    public void setOptionSalutationBox1() {
+        option.setOptionSalutation1(optionSalutationBox1.getValue());
+        Transaction.setOptions(option);
+        updateRequestText();
+        returnToConfiguration();
+    }
+	public void setOptionSalutationBox2() {
+        option.setOptionSalutation2(optionSalutationBox2.getValue());
+        Transaction.setOptions(option);
+        updateRequestText();
+        returnToConfiguration();
+    }
+	public void setOptionSalutationBox3() {
+        option.setOptionSalutation3(optionSalutationBox3.getValue());
+        Transaction.setOptions(option);
+        updateRequestText();
+        returnToConfiguration();
+    }
+	public void setOptionSalutationBox4() {
+        option.setOptionSalutation4(optionSalutationBox4.getValue());
         Transaction.setOptions(option);
         updateRequestText();
         returnToConfiguration();
