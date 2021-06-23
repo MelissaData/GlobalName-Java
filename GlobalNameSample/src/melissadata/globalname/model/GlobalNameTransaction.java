@@ -19,7 +19,7 @@ public class GlobalNameTransaction {
     private String company, fullname, format, country;
 
     public GlobalNameTransaction() {
-        endpoint    = "https://globalname-beta.melissadata.net/V3/WEB/GlobalName/doGlobalName?t=";
+        endpoint    = "https://globalname.melissadata.net/V3/WEB/GlobalName/doGlobalName?t=";
         options     = new GlobalNameOptions();
         identNumber = "";
         company     = "";
