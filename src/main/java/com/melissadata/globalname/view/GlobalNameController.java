@@ -1,4 +1,4 @@
-package melissadata.globalname.view;
+package com.melissadata.globalname.view;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -9,9 +9,9 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import melissadata.globalname.model.GlobalNameTransaction;
-import melissadata.globalname.model.GlobalNameOptions;
-import melissadata.globalname.Main;
+import com.melissadata.globalname.model.GlobalNameTransaction;
+import com.melissadata.globalname.model.GlobalNameOptions;
+import com.melissadata.globalname.Main;
 
 public class GlobalNameController  {
 

@@ -1,4 +1,4 @@
-package melissadata.globalname;
+package com.melissadata.globalname;
 
 import java.io.IOException;
 
@@ -7,10 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import melissadata.globalname.view.GlobalNameController;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import melissadata.globalname.view.RootLayoutController;
+import com.melissadata.globalname.view.GlobalNameController;
+import com.melissadata.globalname.view.RootLayoutController;
 
 public class Main extends Application {
     private Stage primaryStage;
@@ -33,7 +31,7 @@ public class Main extends Application {
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("view/RootLayout.fxml"));
+            loader.setLocation(Main.class.getResource("RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
 
             // Show the scene containing the root layout.
@@ -57,7 +55,7 @@ public class Main extends Application {
         try {
             // Load Global Name overview.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("view/GlobalName.fxml"));
+            loader.setLocation(Main.class.getResource("GlobalName.fxml"));
             BorderPane businessSearch = (BorderPane) loader.load();
 
             // Set Global Name
